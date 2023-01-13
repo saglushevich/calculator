@@ -1,13 +1,11 @@
 import CalculatorСС from "@components/CalculatorCC";
-import Header from "@components/Header";
-import ErrorBoundary from "@components/ErrorBoundary";
+import Layout from "@components/Layout";
 
 function HomeCCPage() {
   return (
-    <ErrorBoundary>
-      <Header />
+    <Layout>
       <CalculatorСС />
-    </ErrorBoundary>
+    </Layout>
   );
 }
 

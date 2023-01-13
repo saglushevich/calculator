@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+build
+=======
 /build
+>>>>>>> 1447ad4 (CU-861m7mxmv - Необходимо подключить и настроить Eslint и Prittier)
 coverage
 README.md
