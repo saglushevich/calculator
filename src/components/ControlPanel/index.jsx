@@ -1,17 +1,19 @@
-import { ControlPanelContainer, ControlPanelButton } from './styled'
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-function ControlPanel ({onSetHistoryState}) {
+import { ControlPanelContainer, ControlPanelButton } from "./styled";
 
-    return (
-        <ControlPanelContainer>
-            <ControlPanelButton onClick={onSetHistoryState}>Show/Hide history</ControlPanelButton>
-        </ControlPanelContainer>
-    )
+function ControlPanel({ onSetHistoryState }) {
+  return (
+    <ControlPanelContainer>
+      <ControlPanelButton onClick={onSetHistoryState}>
+        Show/Hide history
+      </ControlPanelButton>
+    </ControlPanelContainer>
+  );
 }
 
-export default ControlPanel
+export default ControlPanel;
 
 ControlPanel.propTypes = {
-    onSetHistoryState: PropTypes.func
-}
+  onSetHistoryState: PropTypes.func,
+};
