@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     * {
@@ -10,6 +10,6 @@ export default createGlobalStyle`
     } 
 
     body {
-        background-color: ${({ theme }) => theme.colors.seventh};
+        background-color: ${({theme}) => theme.colors.seventh};
     }
 `;
