@@ -1,28 +1,36 @@
 import { useSelector, useDispatch } from "react-redux";
-import { HistoryContainer, HistoryTitle, HistoryItems } from "./styled";
+
 import HistoryItem from "@components/HistoryItem";
 import { setInputValue } from "@store/actions/actions";
 
-function History () {
-    const history = useSelector(state => state.history);
-    const dispatch = useDispatch();
+import { HistoryContainer, HistoryTitle, HistoryItems } from "./styled";
 
-    const onSelectHistoryItem = (value) => {
-        dispatch(setInputValue(value));
-    }   
+function History() {
+  const history = useSelector((state) => state.history);
+  const dispatch = useDispatch();
 
-    const items = history.map((item, i) => {
-        return <HistoryItem key={i} onSelectHistoryItem={() => onSelectHistoryItem(item.result)} expression={`${item.expression}=${item.result}`}/>
-    });
+  const onSelectHistoryItem = (value) => {
+    dispatch(setInputValue(value));
+  };
 
+  const items = history.map((item, i) => {
     return (
-        <HistoryContainer>
-            <HistoryTitle>History</HistoryTitle>
-            <HistoryItems type="history">
-                {items.length ? items : <HistoryItem expression="No items"/>}
-            </HistoryItems>
-        </HistoryContainer>
-    )
+      <HistoryItem
+        key={i}
+        onSelectHistoryItem={() => onSelectHistoryItem(item.result)}
+        expression={`${item.expression}=${item.result}`}
+      />
+    );
+  });
+
+  return (
+    <HistoryContainer>
+      <HistoryTitle>History</HistoryTitle>
+      <HistoryItems type="history">
+        {items.length ? items : <HistoryItem expression="No items" />}
+      </HistoryItems>
+    </HistoryContainer>
+  );
 }
 
 export default History;
