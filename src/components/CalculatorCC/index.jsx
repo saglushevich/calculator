@@ -146,7 +146,10 @@ class CalculatorСС extends Component {
 
       let newHistoryList = [
         ...history,
-        { expression: [...expression, input].join(""), result },
+        {
+          expression: [...expression, input].join(""),
+          result,
+        },
       ];
 
       updateHistory(newHistoryList);

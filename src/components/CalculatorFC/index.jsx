@@ -135,7 +135,10 @@ function CalculatorFC() {
 
       let newHistoryList = [
         ...history,
-        { expression: [...expression, input].join(""), result },
+        {
+          expression: [...expression, input].join(""),
+          result,
+        },
       ];
 
       dispatch(updateHistory(newHistoryList));

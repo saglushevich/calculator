@@ -5,9 +5,9 @@ function Header() {
     <HeaderContainer>
       <Logo>Calculator App</Logo>
       <Navigation>
-        <NavigationItem to={"/"}>Home (FC)</NavigationItem>
-        <NavigationItem to={"/classes"}>Home (CC)</NavigationItem>
-        <NavigationItem to={"/settings"}>Settings</NavigationItem>
+        <NavigationItem to="/">Home (FC)</NavigationItem>
+        <NavigationItem to="/classes">Home (CC)</NavigationItem>
+        <NavigationItem to="/settings">Settings</NavigationItem>
       </Navigation>
     </HeaderContainer>
   );

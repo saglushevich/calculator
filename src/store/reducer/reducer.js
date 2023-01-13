@@ -17,7 +17,10 @@ const reducer = (state = initialState, action) => {
     case "SET_THEME":
       return { ...state, theme: action.payload };
     case "SET_INVALID_INPUT_FORMAT":
-      return { ...state, invalidInputFormat: action.payload };
+      return {
+        ...state,
+        invalidInputFormat: action.payload,
+      };
     default:
       return state;
   }
