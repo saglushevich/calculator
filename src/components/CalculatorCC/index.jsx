@@ -140,8 +140,7 @@ class CalculatorСС extends Component {
     let result = this.calculate(this.createCalcQueue(expression.concat(input)));
 
     if (!Number.isNaN(result)) {
-      result =
-        result === 0 ? "" : result % 1 !== 0 ? result.toFixed(3) : result;
+      result = result % 1 !== 0 ? result.toFixed(3) : result;
       sessionStorage.setItem("inputValue", result);
 
       let newHistoryList = [

@@ -130,8 +130,7 @@ function CalculatorFC() {
     const finalFormula = expression.concat(input);
     let result = calculate(createCalcQueue(finalFormula));
     if (!Number.isNaN(result) && finalFormula.length !== 1) {
-      result =
-        result === 0 ? "" : result % 1 !== 0 ? result.toFixed(3) : result;
+      result = result % 1 !== 0 ? result.toFixed(3) : result;
 
       let newHistoryList = [
         ...history,
