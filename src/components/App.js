@@ -15,9 +15,9 @@ function App() {
     <ThemeProvider theme={theme === "DARK" ? DARK : LIGHT}>
       <Router>
         <Routes>
-          <Route path="/" element={<HomeFCPage />} />
-          <Route path="/classes" element={<HomeCCPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/calculator" element={<HomeFCPage />} />
+          <Route path="/calculator/classes" element={<HomeCCPage />} />
+          <Route path="/calculator/settings" element={<SettingsPage />} />
         </Routes>
       </Router>
       <GlobalStyles />

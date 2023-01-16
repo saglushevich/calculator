@@ -28,10 +28,10 @@
   },
   "plugins": ["simple-import-sort", "prettier", "react", "react-hooks"],
   "rules": {
-    "class-methods-use-this":"off",
     "one-var":"off",
-    "no-restricted-globals":"off",
-    "prefer-template":"off",
+    "class-methods-use-this": "off",
+    "no-restricted-globals": "off",
+    "prefer-template": "off",
     "react/jsx-filename-extension": [0, { "allow": "as-needed" }],
     "arrow-body-style": 0,
     "react/no-array-index-key": 0,
