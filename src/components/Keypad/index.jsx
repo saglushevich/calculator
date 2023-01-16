@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
 
 import KeypadButton from "@components/KeypadButton/index";
 import KEYPAD_BUTTONS from "@constants/buttons";
@@ -7,15 +6,18 @@ import {
   updateExpression,
   setInvalidInputFormat,
   setInputValue,
+  updateHistory,
 } from "@store/actions/actions";
+import { createCalcQueue, calculate } from "@utils/calculator";
 
 import KeypadContainer from "./styled";
 
-function Keypad({ onEqual }) {
+function Keypad() {
   const dispatch = useDispatch();
 
   const expression = useSelector((state) => state.expression);
   const input = useSelector((state) => state.inputValue);
+  const history = useSelector((state) => state.history);
 
   const onInputNumber = (value) => {
     if (input === "0") {
@@ -88,6 +90,31 @@ function Keypad({ onEqual }) {
     sessionStorage.setItem("inputValue", "0");
   };
 
+  const onEqual = () => {
+    const finalFormula = expression.concat(input);
+    let result = calculate(createCalcQueue(finalFormula));
+    if (!Number.isNaN(result) && finalFormula.length !== 1) {
+      result = result % 1 !== 0 ? result.toFixed(3) : result;
+
+      const newHistoryList = [
+        ...history,
+        { expression: [...expression, input].join(""), result },
+      ];
+
+      dispatch(updateHistory(newHistoryList));
+      dispatch(updateExpression(result + ""));
+
+      localStorage.setItem("history", JSON.stringify(newHistoryList));
+
+      dispatch(setInputValue(result + ""));
+      dispatch(updateExpression([]));
+      sessionStorage.removeItem("expression");
+      sessionStorage.removeItem("inputValue");
+    } else {
+      dispatch(setInvalidInputFormat(true));
+    }
+  };
+
   const buttons = KEYPAD_BUTTONS.map((item) => {
     switch (item.id) {
       case "clear":
@@ -127,9 +154,5 @@ function Keypad({ onEqual }) {
 
   return <KeypadContainer>{buttons}</KeypadContainer>;
 }
-
-Keypad.propTypes = {
-  onEqual: PropTypes.func,
-};
 
 export default Keypad;
