@@ -1,11 +1,15 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 
-import { ErrorMessage } from "./styled";
+import ErrorMessage from "./styled";
 
 class ErrorBoundary extends Component {
-  state = {
-    error: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: false,
+    };
+  }
 
   componentDidCatch(error, errorInfo) {
     console.log(error, errorInfo);
@@ -15,12 +19,19 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.error) {
+    const { error } = this.state;
+    const { children } = this.props;
+
+    if (error) {
       return <ErrorMessage>Something went wrong!</ErrorMessage>;
     }
 
-    return this.props.children;
+    return children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.array,
+};
 
 export default ErrorBoundary;

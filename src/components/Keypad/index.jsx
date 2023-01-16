@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 import KeypadButton from "@components/KeypadButton/index";
-import { KEYPAD_BUTTONS } from "@constants/buttons";
+import KEYPAD_BUTTONS from "@constants/buttons";
 import {
   updateExpression,
   setInvalidInputFormat,
   setInputValue,
 } from "@store/actions/actions";
 
-import { KeypadContainer } from "./styled";
+import KeypadContainer from "./styled";
 
 function Keypad({ onEqual }) {
   const dispatch = useDispatch();
@@ -126,5 +127,9 @@ function Keypad({ onEqual }) {
 
   return <KeypadContainer>{buttons}</KeypadContainer>;
 }
+
+Keypad.propTypes = {
+  onEqual: PropTypes.func,
+};
 
 export default Keypad;
