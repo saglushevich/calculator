@@ -1,46 +1,69 @@
-import { SettingsContainer, SettingsTitle, SettingsDropdawn, SettingsSelected, SettingsContent, SettingsItem, SettingsSubtitle, SettingsButton } from "./styled";
-import { updateExpression, updateHistory, setInvalidInputFormat, setTheme, setInputValue } from "@store/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-function Settings () {
-    const dispatch = useDispatch();
-    const theme = useSelector(state => state.theme);
+import {
+  updateExpression,
+  updateHistory,
+  setInvalidInputFormat,
+  setTheme,
+  setInputValue,
+} from "@store/actions/actions";
 
-    const clearHistory = () => {
-        dispatch(updateHistory([]));
-        localStorage.removeItem("history");
-    }
+import {
+  SettingsContainer,
+  SettingsTitle,
+  SettingsDropdawn,
+  SettingsSelected,
+  SettingsContent,
+  SettingsItem,
+  SettingsSubtitle,
+  SettingsButton,
+} from "./styled";
 
-    const clearAll = () => {
-        dispatch(updateExpression([]));
-        dispatch(setInputValue("0"));
+function Settings() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
 
-        clearHistory();
+  const clearHistory = () => {
+    dispatch(updateHistory([]));
+    localStorage.removeItem("history");
+  };
 
-        dispatch(setInvalidInputFormat(false));
-    }
+  const clearAll = () => {
+    dispatch(updateExpression([]));
+    dispatch(setInputValue("0"));
 
-    const toggleTheme = (value) => {
-        dispatch(setTheme(value));
-        localStorage.setItem("theme", value)
-    }
+    clearHistory();
 
-    return (
-        <SettingsContainer>
-            <SettingsTitle>Settings</SettingsTitle>
-            <SettingsDropdawn>
-                <SettingsSubtitle>Switch Theme</SettingsSubtitle>
-                <SettingsSelected>{theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}</SettingsSelected>
-                <SettingsContent type="settingsContent">
-                    <SettingsItem onClick={() => toggleTheme("LIGHT")}>Light Theme</SettingsItem>
-                    <SettingsItem onClick={() => toggleTheme("DARK")}>Dark Theme</SettingsItem>
-                </SettingsContent>
-            </SettingsDropdawn>
+    dispatch(setInvalidInputFormat(false));
+  };
 
-            <SettingsButton onClick={clearHistory}>Clear History</SettingsButton>
-            <SettingsButton onClick={clearAll}>Clear All</SettingsButton>
-        </SettingsContainer>
-    )
+  const toggleTheme = (value) => {
+    dispatch(setTheme(value));
+    localStorage.setItem("theme", value);
+  };
+
+  return (
+    <SettingsContainer>
+      <SettingsTitle>Settings</SettingsTitle>
+      <SettingsDropdawn>
+        <SettingsSubtitle>Switch Theme</SettingsSubtitle>
+        <SettingsSelected>
+          {theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}
+        </SettingsSelected>
+        <SettingsContent type="settingsContent">
+          <SettingsItem onClick={() => toggleTheme("LIGHT")}>
+            Light Theme
+          </SettingsItem>
+          <SettingsItem onClick={() => toggleTheme("DARK")}>
+            Dark Theme
+          </SettingsItem>
+        </SettingsContent>
+      </SettingsDropdawn>
+
+      <SettingsButton onClick={clearHistory}>Clear History</SettingsButton>
+      <SettingsButton onClick={clearAll}>Clear All</SettingsButton>
+    </SettingsContainer>
+  );
 }
 
 export default Settings;
