@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Item = styled.li`
+const Item = styled.li`
   text-align: left;
   font-size: 26px;
   color: ${({ theme }) => theme.colors.fourth};
@@ -10,3 +10,5 @@ export const Item = styled.li`
     margin-bottom: 25px;
   }
 `;
+
+export default Item;

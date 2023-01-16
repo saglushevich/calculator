@@ -1,4 +1,4 @@
-export const KEYPAD_BUTTONS = [
+const KEYPAD_BUTTONS = [
   {
     id: "changeSign",
     value: "±",
@@ -85,3 +85,5 @@ export const KEYPAD_BUTTONS = [
     value: ")",
   },
 ];
+
+export default KEYPAD_BUTTONS;

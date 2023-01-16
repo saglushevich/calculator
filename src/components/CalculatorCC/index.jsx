@@ -36,8 +36,8 @@ class CalculatorСС extends Component {
   };
 
   createCalcQueue = (expression) => {
-    let result = [],
-      stack = [];
+    const result = [];
+    const stack = [];
 
     expression.forEach((item) => {
       if (!isNaN(item)) {
@@ -143,7 +143,7 @@ class CalculatorСС extends Component {
       result = result % 1 !== 0 ? result.toFixed(3) : result;
       sessionStorage.setItem("inputValue", result);
 
-      let newHistoryList = [
+      const newHistoryList = [
         ...history,
         {
           expression: [...expression, input].join(""),
@@ -165,6 +165,8 @@ class CalculatorСС extends Component {
   };
 
   render() {
+    const { historyState } = this.state;
+
     return (
       <CalculatorContainer>
         <CalculatorInnerContainer>
@@ -173,7 +175,7 @@ class CalculatorСС extends Component {
         </CalculatorInnerContainer>
         <CalculatorInnerContainer>
           <ControlPanel onSetHistoryState={this.setHistoryState} />
-          {this.state.historyState ? <History /> : null}
+          {historyState ? <History /> : null}
         </CalculatorInnerContainer>
       </CalculatorContainer>
     );
@@ -192,6 +194,10 @@ CalculatorСС.propTypes = {
   expression: PropTypes.array,
   history: PropTypes.array,
   input: PropTypes.string,
+  updateHistory: PropTypes.func,
+  updateExpression: PropTypes.func,
+  setInputValue: PropTypes.func,
+  setInvalidInputFormat: PropTypes.func,
 };
 
 export default connect(mapStateToProps, actions)(CalculatorСС);

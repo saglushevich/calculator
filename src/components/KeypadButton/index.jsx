@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { Button } from "./styled";
+import Button from "./styled";
 
 function KeypadButton({ value, onSelectElement }) {
   return <Button onClick={onSelectElement}>{value}</Button>;

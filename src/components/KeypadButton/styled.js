@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+const Button = styled.button`
   width: 80px;
   height: 80px;
   background-color: ${({ theme }) => theme.colors.first};
@@ -35,3 +35,5 @@ export const Button = styled.button`
     border-radius: 20px 0 0 20px;
   }
 `;
+
+export default Button;

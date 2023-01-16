@@ -7,7 +7,7 @@ import {
   Expression,
 } from "./styled";
 
-const Display = () => {
+function Display() {
   const expression = useSelector((state) => state.expression);
   const inputValue = useSelector((state) => state.inputValue);
   const invalidInputFormat = useSelector((state) => state.invalidInputFormat);
@@ -21,6 +21,6 @@ const Display = () => {
       ) : null}
     </DisplayContainer>
   );
-};
+}
 
 export default Display;

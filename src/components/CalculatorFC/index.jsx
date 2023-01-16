@@ -34,11 +34,11 @@ function CalculatorFC() {
 
   const dispatch = useDispatch();
 
-  const createCalcQueue = (expression) => {
-    let result = [],
-      stack = [];
+  const createCalcQueue = (formula) => {
+    const result = [];
+    const stack = [];
 
-    expression.forEach((item) => {
+    formula.forEach((item) => {
       if (!isNaN(item)) {
         result.push(item);
       } else if (item === "(") {
@@ -79,10 +79,10 @@ function CalculatorFC() {
     return result;
   };
 
-  const calculate = (expression) => {
+  const calculate = (formula) => {
     const calculator = new Calculator();
 
-    expression.forEach((item) => {
+    formula.forEach((item) => {
       if (!isNaN(item)) {
         calculator.executeCommand(new AddToStackCommand(item));
       } else {
@@ -132,7 +132,7 @@ function CalculatorFC() {
     if (!Number.isNaN(result) && finalFormula.length !== 1) {
       result = result % 1 !== 0 ? result.toFixed(3) : result;
 
-      let newHistoryList = [
+      const newHistoryList = [
         ...history,
         {
           expression: [...expression, input].join(""),

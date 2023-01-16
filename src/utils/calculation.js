@@ -1,31 +1,3 @@
-class Calculator {
-  constructor() {
-    this.value = 0;
-    this.stack = [];
-    this.history = [];
-  }
-
-  executeCommand(command) {
-    this.history.push(command);
-    if (command instanceof AddToStackCommand) {
-      command.execute(this.stack);
-    } else if (command instanceof GetFromStackCommand) {
-      return command.execute(this.stack);
-    } else {
-      this.value = command.execute(this.value);
-    }
-  }
-
-  undo() {
-    const command = this.history.pop();
-    this.value = command.undo(this.value);
-  }
-
-  setValue(value) {
-    this.value = value;
-  }
-}
-
 class AddToStackCommand {
   constructor(value) {
     this.value = value;
@@ -119,6 +91,34 @@ class RemainderCommand {
   undo(currentValue) {
     const tempVal = this.temp * this.value;
     return currentValue + tempVal;
+  }
+}
+
+class Calculator {
+  constructor() {
+    this.value = 0;
+    this.stack = [];
+    this.history = [];
+  }
+
+  executeCommand(command) {
+    this.history.push(command);
+    if (command instanceof AddToStackCommand) {
+      command.execute(this.stack);
+    } else if (command instanceof GetFromStackCommand) {
+      return command.execute(this.stack);
+    } else {
+      this.value = command.execute(this.value);
+    }
+  }
+
+  undo() {
+    const command = this.history.pop();
+    this.value = command.undo(this.value);
+  }
+
+  setValue(value) {
+    this.value = value;
   }
 }
 
