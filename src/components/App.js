@@ -6,18 +6,22 @@ import HomeFCPage from "@pages/HomeFCPage";
 import HomeCCPage from "@pages/HomeCCPage";
 import SettingsPage from "@pages/SettingsPage";
 import GlobalStyles from "@styles/styles";
-import { LIGHT, DARK } from "@constants/theme";
+import { LIGHT_COLORS, DARK_COLORS } from "@constants/colors";
+import ROUTES from "@constants/routes";
+import THEMES from "@constants/themes";
 
 function App() {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <ThemeProvider theme={theme === "DARK" ? DARK : LIGHT}>
+    <ThemeProvider
+      theme={theme === THEMES.DARK_THEME ? DARK_COLORS : LIGHT_COLORS}
+    >
       <Router>
         <Routes>
-          <Route path="/" element={<HomeFCPage />} />
-          <Route path="/classes" element={<HomeCCPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path={ROUTES.FUNCTION_CALC} element={<HomeFCPage />} />
+          <Route path={ROUTES.CLASS_CALC} element={<HomeCCPage />} />
+          <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
         </Routes>
       </Router>
       <GlobalStyles />

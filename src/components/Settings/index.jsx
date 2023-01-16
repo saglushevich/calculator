@@ -7,6 +7,7 @@ import {
   setTheme,
   setInputValue,
 } from "@store/actions/actions";
+import THEMES from "@constants/themes";
 
 import {
   SettingsContainer,
@@ -51,10 +52,10 @@ function Settings() {
           {theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}
         </SettingsSelected>
         <SettingsContent type="settingsContent">
-          <SettingsItem onClick={() => toggleTheme("LIGHT")}>
+          <SettingsItem onClick={() => toggleTheme(THEMES.LIGHT_THEME)}>
             Light Theme
           </SettingsItem>
-          <SettingsItem onClick={() => toggleTheme("DARK")}>
+          <SettingsItem onClick={() => toggleTheme(THEMES.DARK_THEME)}>
             Dark Theme
           </SettingsItem>
         </SettingsContent>

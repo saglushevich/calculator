@@ -1,3 +1,5 @@
+import ROUTES from "@constants/routes";
+
 import { HeaderContainer, Logo, Navigation, NavigationItem } from "./styled";
 
 function Header() {
@@ -5,9 +7,9 @@ function Header() {
     <HeaderContainer>
       <Logo>Calculator App</Logo>
       <Navigation>
-        <NavigationItem to="/">Home (FC)</NavigationItem>
-        <NavigationItem to="/classes">Home (CC)</NavigationItem>
-        <NavigationItem to="/settings">Settings</NavigationItem>
+        <NavigationItem to={ROUTES.FUNCTION_CALC}>Home (FC)</NavigationItem>
+        <NavigationItem to={ROUTES.CLASS_CALC}>Home (CC)</NavigationItem>
+        <NavigationItem to={ROUTES.SETTINGS}>Settings</NavigationItem>
       </Navigation>
     </HeaderContainer>
   );

@@ -1,4 +1,4 @@
-export const DARK = {
+export const DARK_COLORS = {
   colors: {
     first: "#000000",
     second: "#FFFFFF",
@@ -10,7 +10,7 @@ export const DARK = {
   },
 };
 
-export const LIGHT = {
+export const LIGHT_COLORS = {
   colors: {
     first: "#F2F2F2",
     second: "#707070",
