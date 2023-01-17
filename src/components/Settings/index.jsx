@@ -52,10 +52,10 @@ function Settings() {
           {theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}
         </SettingsSelected>
         <SettingsContent type="settingsContent">
-          <SettingsItem onClick={() => toggleTheme(THEMES.LIGHT_THEME)}>
+          <SettingsItem onClick={() => toggleTheme(THEMES.light)}>
             Light Theme
           </SettingsItem>
-          <SettingsItem onClick={() => toggleTheme(THEMES.DARK_THEME)}>
+          <SettingsItem onClick={() => toggleTheme(THEMES.dark)}>
             Dark Theme
           </SettingsItem>
         </SettingsContent>

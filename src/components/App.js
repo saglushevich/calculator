@@ -12,9 +12,7 @@ function App() {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <ThemeProvider
-      theme={theme === THEMES.DARK_THEME ? DARK_COLORS : LIGHT_COLORS}
-    >
+    <ThemeProvider theme={theme === THEMES.dark ? DARK_COLORS : LIGHT_COLORS}>
       <Router>
         <Routes>
           <Route path={ROUTES.functionCalc} element={<HomeFCPage />} />
