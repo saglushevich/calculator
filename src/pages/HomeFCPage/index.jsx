@@ -1,12 +1,11 @@
 import CalculatorFC from "@components/CalculatorFC";
-import Header from "@components/Header";
+import Layout from "@components/Layout";
 
 function HomeFCPage() {
   return (
-    <>
-      <Header />
+    <Layout>
       <CalculatorFC />
-    </>
+    </Layout>
   );
 }
 
