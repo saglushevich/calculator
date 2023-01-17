@@ -25,7 +25,6 @@ function Settings() {
 
   const clearHistory = () => {
     dispatch(updateHistory([]));
-    localStorage.removeItem("history");
   };
 
   const clearAll = () => {
@@ -39,7 +38,6 @@ function Settings() {
 
   const toggleTheme = (value) => {
     dispatch(setTheme(value));
-    localStorage.setItem("theme", value);
   };
 
   return (
