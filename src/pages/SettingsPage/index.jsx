@@ -1,12 +1,11 @@
-import Header from "@components/Header";
 import Settings from "@components/Settings";
+import Layout from "@components/Layout";
 
 function SettingsPage() {
   return (
-    <>
-      <Header />
+    <Layout>
       <Settings />
-    </>
+    </Layout>
   );
 }
 

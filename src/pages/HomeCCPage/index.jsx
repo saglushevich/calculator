@@ -1,12 +1,11 @@
 import CalculatorСС from "@components/CalculatorCC";
-import Header from "@components/Header";
+import Layout from "@components/Layout";
 
 function HomeCCPage() {
   return (
-    <>
-      <Header />
+    <Layout>
       <CalculatorСС />
-    </>
+    </Layout>
   );
 }
 
