@@ -69,9 +69,6 @@ function Keypad({ onEqual }) {
     } else {
       onInputPoint(value);
     }
-
-    sessionStorage.setItem("expression", JSON.stringify(expression));
-    sessionStorage.setItem("inputValue", input);
   };
 
   const onChangeSign = () => {
@@ -84,8 +81,6 @@ function Keypad({ onEqual }) {
     dispatch(updateExpression([]));
     dispatch(setInputValue("0"));
     dispatch(setInvalidInputFormat(false));
-    sessionStorage.setItem("expression", JSON.stringify([]));
-    sessionStorage.setItem("inputValue", "0");
   };
 
   const buttons = KEYPAD_BUTTONS.map((item) => {

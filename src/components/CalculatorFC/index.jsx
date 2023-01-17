@@ -140,12 +140,8 @@ function CalculatorFC() {
       dispatch(updateHistory(newHistoryList));
       dispatch(updateExpression(result + ""));
 
-      localStorage.setItem("history", JSON.stringify(newHistoryList));
-
       dispatch(setInputValue(result + ""));
       dispatch(updateExpression([]));
-      sessionStorage.removeItem("expression");
-      sessionStorage.removeItem("inputValue");
     } else {
       dispatch(setInvalidInputFormat(true));
     }
