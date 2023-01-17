@@ -151,6 +151,10 @@ function CalculatorFC() {
     }
   };
 
+  const toggleHistory = () => {
+    setHistoryState(!historyState);
+  };
+
   return (
     <CalculatorContainer>
       <CalculatorInnerContainer>
@@ -158,9 +162,7 @@ function CalculatorFC() {
         <Keypad onEqual={onEqual} />
       </CalculatorInnerContainer>
       <CalculatorInnerContainer>
-        <ControlPanel
-          onSetHistoryState={() => setHistoryState(!historyState)}
-        />
+        <ControlPanel onSetHistoryState={toggleHistory} />
         {historyState ? <History /> : null}
       </CalculatorInnerContainer>
     </CalculatorContainer>

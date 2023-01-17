@@ -52,7 +52,7 @@ function Keypad({ onEqual }) {
     }
   };
 
-  const onSelectElement = (value) => {
+  const onSelectElement = (value) => () => {
     dispatch(setInvalidInputFormat(false));
 
     if (value.match(/\d/)) {
@@ -117,7 +117,7 @@ function Keypad({ onEqual }) {
       default:
         return (
           <KeypadButton
-            onSelectElement={() => onSelectElement(item.value)}
+            onSelectElement={onSelectElement(item.value)}
             key={item.id}
             value={item.value}
           />
