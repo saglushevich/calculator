@@ -37,10 +37,9 @@ function Settings() {
     dispatch(setInvalidInputFormat(false));
   };
 
-  const toggleTheme = () => {
-    const newTheme = theme === "LIGHT" ? "DARK" : "LIGHT";
-    dispatch(setTheme(newTheme));
-    localStorage.setItem("theme", newTheme);
+  const toggleTheme = (value) => () => {
+    dispatch(setTheme(value));
+    localStorage.setItem("theme", value);
   };
 
   return (
@@ -52,8 +51,10 @@ function Settings() {
           {theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}
         </SettingsSelected>
         <SettingsContent type="settingsContent">
-          <SettingsItem onClick={toggleTheme}>Light Theme</SettingsItem>
-          <SettingsItem onClick={toggleTheme}>Dark Theme</SettingsItem>
+          <SettingsItem onClick={toggleTheme("LIGHT")}>
+            Light Theme
+          </SettingsItem>
+          <SettingsItem onClick={toggleTheme("DARK")}>Dark Theme</SettingsItem>
         </SettingsContent>
       </SettingsDropdawn>
 
