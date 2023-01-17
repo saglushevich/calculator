@@ -1,7 +1,7 @@
 const ROUTES = {
-  FUNCTION_CALC: "/calculator/functional",
-  CLASS_CALC: "/calculator/classes",
-  SETTINGS: "/calculator/settings",
+  functionCalc: "/",
+  classCalc: "/classes",
+  settings: "/settings",
 };
 
 export default ROUTES;

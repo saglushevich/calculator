@@ -5,12 +5,12 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 20px 20px;
-  background-color: ${({ theme }) => theme.colors.third};
+  background-color: ${({ theme }) => theme.third};
 `;
 
 export const Logo = styled.div`
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.fifth};
+  color: ${({ theme }) => theme.fifth};
 `;
 
 export const Navigation = styled.nav`
@@ -20,7 +20,7 @@ export const Navigation = styled.nav`
 export const NavigationItem = styled(NavLink)`
   position: relative;
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.fifth};
+  color: ${({ theme }) => theme.fifth};
   opacity: 0.7;
   margin-left: 30px;
   cursor: pointer;
@@ -34,6 +34,6 @@ export const NavigationItem = styled(NavLink)`
     left: 0;
     width: 100%;
     height: 2px;
-    background: ${({ theme }) => theme.colors.fifth};
+    background: ${({ theme }) => theme.fifth};
   }
 `;

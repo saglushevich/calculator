@@ -10,10 +10,10 @@ export const ControlPanelButton = styled.button`
   display: block;
   width: 200px;
   height: 55px;
-  background-color: ${({ theme }) => theme.colors.third};
-  border: 2px solid ${({ theme }) => theme.colors.second};
+  background-color: ${({ theme }) => theme.third};
+  border: 2px solid ${({ theme }) => theme.second};
   border-radius: 8px;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.fifth};
+  color: ${({ theme }) => theme.fifth};
   font-size: 20px;
 `;
