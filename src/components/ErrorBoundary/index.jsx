@@ -31,11 +31,7 @@ class ErrorBoundary extends Component {
 }
 
 ErrorBoundary.propTypes = {
-<<<<<<< HEAD
   children: PropTypes.node,
-=======
-  children: PropTypes.array,
->>>>>>> 3ea8cde (delete unused rules)
 };
 
 export default ErrorBoundary;
