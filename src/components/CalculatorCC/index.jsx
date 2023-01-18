@@ -141,7 +141,6 @@ class CalculatorСС extends Component {
 
     if (!Number.isNaN(result)) {
       result = result % 1 !== 0 ? result.toFixed(3) : result;
-      sessionStorage.setItem("inputValue", result);
 
       const newHistoryList = [
         ...history,
@@ -151,11 +150,8 @@ class CalculatorСС extends Component {
       updateHistory(newHistoryList);
       updateExpression(result + "");
 
-      localStorage.setItem("history", JSON.stringify(newHistoryList));
-
       setInputValue(result + "");
       updateExpression([]);
-      sessionStorage.removeItem("expression");
     } else {
       setInvalidInputFormat(true);
     }

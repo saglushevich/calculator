@@ -52,7 +52,7 @@ function Keypad({ onEqual }) {
     }
   };
 
-  const onSelectElement = (value) => {
+  const onSelectElement = (value) => () => {
     dispatch(setInvalidInputFormat(false));
 
     if (value.match(/\d/)) {
@@ -69,9 +69,6 @@ function Keypad({ onEqual }) {
     } else {
       onInputPoint(value);
     }
-
-    sessionStorage.setItem("expression", JSON.stringify(expression));
-    sessionStorage.setItem("inputValue", input);
   };
 
   const onChangeSign = () => {
@@ -84,8 +81,6 @@ function Keypad({ onEqual }) {
     dispatch(updateExpression([]));
     dispatch(setInputValue("0"));
     dispatch(setInvalidInputFormat(false));
-    sessionStorage.setItem("expression", JSON.stringify([]));
-    sessionStorage.setItem("inputValue", "0");
   };
 
   const buttons = KEYPAD_BUTTONS.map((item) => {
@@ -117,7 +112,7 @@ function Keypad({ onEqual }) {
       default:
         return (
           <KeypadButton
-            onSelectElement={() => onSelectElement(item.value)}
+            onSelectElement={onSelectElement(item.value)}
             key={item.id}
             value={item.value}
           />

@@ -1,9 +1,9 @@
 const initialState = {
-  expression: JSON.parse(sessionStorage.getItem("expression")) || [],
-  inputValue: sessionStorage.getItem("inputValue") || "0",
-  history: JSON.parse(localStorage.getItem("history")) || [],
+  expression: [],
+  inputValue: "0",
+  history: [],
   invalidInputFormat: false,
-  theme: localStorage.getItem("theme") || "LIGHT",
+  theme: "LIGHT",
 };
 
 const reducer = (state = initialState, action) => {

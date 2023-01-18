@@ -140,15 +140,15 @@ function CalculatorFC() {
       dispatch(updateHistory(newHistoryList));
       dispatch(updateExpression(result + ""));
 
-      localStorage.setItem("history", JSON.stringify(newHistoryList));
-
       dispatch(setInputValue(result + ""));
       dispatch(updateExpression([]));
-      sessionStorage.removeItem("expression");
-      sessionStorage.removeItem("inputValue");
     } else {
       dispatch(setInvalidInputFormat(true));
     }
+  };
+
+  const toggleHistory = () => {
+    setHistoryState(!historyState);
   };
 
   return (
@@ -158,9 +158,7 @@ function CalculatorFC() {
         <Keypad onEqual={onEqual} />
       </CalculatorInnerContainer>
       <CalculatorInnerContainer>
-        <ControlPanel
-          onSetHistoryState={() => setHistoryState(!historyState)}
-        />
+        <ControlPanel onSetHistoryState={toggleHistory} />
         {historyState ? <History /> : null}
       </CalculatorInnerContainer>
     </CalculatorContainer>

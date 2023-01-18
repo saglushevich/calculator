@@ -26,7 +26,6 @@ function Settings() {
 
   const clearHistory = () => {
     dispatch(updateHistory([]));
-    localStorage.removeItem("history");
   };
 
   const clearAll = () => {
@@ -38,9 +37,8 @@ function Settings() {
     dispatch(setInvalidInputFormat(false));
   };
 
-  const toggleTheme = (value) => {
+  const toggleTheme = (value) => () => {
     dispatch(setTheme(value));
-    localStorage.setItem("theme", value);
   };
 
   return (
@@ -52,12 +50,10 @@ function Settings() {
           {theme[0].toUpperCase() + theme.slice(1).toLowerCase() + " Theme"}
         </SettingsSelected>
         <SettingsContent type="settingsContent">
-          <SettingsItem onClick={() => toggleTheme(THEMES.light)}>
+          <SettingsItem onClick={toggleTheme("LIGHT")}>
             Light Theme
           </SettingsItem>
-          <SettingsItem onClick={() => toggleTheme(THEMES.dark)}>
-            Dark Theme
-          </SettingsItem>
+          <SettingsItem onClick={toggleTheme("DARK")}>Dark Theme</SettingsItem>
         </SettingsContent>
       </SettingsDropdawn>
 
