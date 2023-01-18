@@ -17,9 +17,7 @@ function CalculatorFC() {
         <Keypad />
       </CalculatorInnerContainer>
       <CalculatorInnerContainer>
-        <ControlPanel
-          onSetHistoryState={() => setHistoryState(!historyState)}
-        />
+        <ControlPanel onSetHistoryState={toggleHistory} />
         {historyState ? <History /> : null}
       </CalculatorInnerContainer>
     </CalculatorContainer>

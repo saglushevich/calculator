@@ -10,6 +10,6 @@ export default createGlobalStyle`
     } 
 
     body {
-        background-color: ${({ theme }) => theme.colors.seventh};
+        background-color: ${({ theme }) => theme.seventh};
     }
 `;

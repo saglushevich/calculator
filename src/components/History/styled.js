@@ -4,13 +4,13 @@ export const HistoryContainer = styled.div`
   padding: 15px 40px 0;
   width: 400px;
   height: 400px;
-  border-left: 2px solid ${({ theme }) => theme.colors.second};
+  border-left: 2px solid ${({ theme }) => theme.second};
 `;
 
 export const HistoryTitle = styled.div`
   text-align: center;
   font-size: 28px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
 `;
 
 export const HistoryItems = styled.ul`

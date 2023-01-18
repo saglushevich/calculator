@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import KeypadButton from "@components/KeypadButton/index";
-import KEYPAD_BUTTONS from "@constants/buttons";
+import { KEYPAD_BUTTONS, KEYPAD_ACTIONS } from "@constants";
 import {
   updateExpression,
   setInvalidInputFormat,
@@ -54,7 +54,7 @@ function Keypad() {
     }
   };
 
-  const onSelectElement = (value) => {
+  const onSelectElement = (value) => () => {
     dispatch(setInvalidInputFormat(false));
 
     if (value.match(/\d/)) {
@@ -71,9 +71,6 @@ function Keypad() {
     } else {
       onInputPoint(value);
     }
-
-    sessionStorage.setItem("expression", JSON.stringify(expression));
-    sessionStorage.setItem("inputValue", input);
   };
 
   const onChangeSign = () => {
@@ -86,8 +83,6 @@ function Keypad() {
     dispatch(updateExpression([]));
     dispatch(setInputValue("0"));
     dispatch(setInvalidInputFormat(false));
-    sessionStorage.setItem("expression", JSON.stringify([]));
-    sessionStorage.setItem("inputValue", "0");
   };
 
   const onEqual = () => {
@@ -117,7 +112,7 @@ function Keypad() {
 
   const buttons = KEYPAD_BUTTONS.map((item) => {
     switch (item.id) {
-      case "clear":
+      case KEYPAD_ACTIONS.clear:
         return (
           <KeypadButton
             key={item.id}
@@ -125,7 +120,7 @@ function Keypad() {
             onSelectElement={onClearExpression}
           />
         );
-      case "equals":
+      case KEYPAD_ACTIONS.equals:
         return (
           <KeypadButton
             key={item.id}
@@ -133,7 +128,7 @@ function Keypad() {
             onSelectElement={onEqual}
           />
         );
-      case "changeSign":
+      case KEYPAD_ACTIONS.changeSign:
         return (
           <KeypadButton
             key={item.id}
@@ -144,7 +139,7 @@ function Keypad() {
       default:
         return (
           <KeypadButton
-            onSelectElement={() => onSelectElement(item.value)}
+            onSelectElement={onSelectElement(item.value)}
             key={item.id}
             value={item.value}
           />
