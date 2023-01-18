@@ -10,6 +10,10 @@ import { CalculatorContainer, CalculatorInnerContainer } from "./styled";
 function CalculatorFC() {
   const [historyState, setHistoryState] = useState(false);
 
+  const toggleHistory = () => {
+    setHistoryState(!historyState);
+  };
+
   return (
     <CalculatorContainer>
       <CalculatorInnerContainer>
