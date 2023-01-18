@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import KeypadButton from "@components/KeypadButton/index";
-import KEYPAD_BUTTONS from "@constants/buttons";
+import { KEYPAD_BUTTONS, KEYPAD_ACTIONS } from "@constants";
 import {
   updateExpression,
   setInvalidInputFormat,
@@ -85,7 +85,7 @@ function Keypad({ onEqual }) {
 
   const buttons = KEYPAD_BUTTONS.map((item) => {
     switch (item.id) {
-      case "clear":
+      case KEYPAD_ACTIONS.clear:
         return (
           <KeypadButton
             key={item.id}
@@ -93,7 +93,7 @@ function Keypad({ onEqual }) {
             onSelectElement={onClearExpression}
           />
         );
-      case "equals":
+      case KEYPAD_ACTIONS.equals:
         return (
           <KeypadButton
             key={item.id}
@@ -101,7 +101,7 @@ function Keypad({ onEqual }) {
             onSelectElement={onEqual}
           />
         );
-      case "changeSign":
+      case KEYPAD_ACTIONS.changeSign:
         return (
           <KeypadButton
             key={item.id}
