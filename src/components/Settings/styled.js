@@ -7,13 +7,13 @@ export const SettingsContainer = styled.div`
 export const SettingsTitle = styled.div`
   text-align: left;
   font-size: 64px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
 `;
 
 export const SettingsContent = styled.div`
   display: none;
   position: absolute;
-  background-color: ${({ theme }) => theme.colors.first};
+  background-color: ${({ theme }) => theme.first};
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -33,9 +33,9 @@ export const SettingsDropdawn = styled.div`
 export const SettingsSelected = styled.div`
   width: 300px;
   background-color: transparent;
-  border: 2px solid ${({ theme }) => theme.colors.second};
+  border: 2px solid ${({ theme }) => theme.second};
   border-radius: 8px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
   padding: 20px 25px;
   font-size: 26px;
   margin-top: 5px;
@@ -43,11 +43,11 @@ export const SettingsSelected = styled.div`
 
 export const SettingsItem = styled.div`
   display: block;
-  border: 2px solid ${({ theme }) => theme.colors.second};
+  border: 2px solid ${({ theme }) => theme.second};
   width: 300px;
   font-size: 28px;
   padding: 7px 25px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
   &:nth-last-child(1) {
     border-radius: 0px 0px 8px 8px;
   }
@@ -55,18 +55,18 @@ export const SettingsItem = styled.div`
 
 export const SettingsSubtitle = styled.div`
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
 `;
 
 export const SettingsButton = styled.button`
   text-align: left;
   width: 300px;
   display: block;
-  background-color: ${({ theme }) => theme.colors.first};
-  border: 2px solid ${({ theme }) => theme.colors.second};
+  background-color: ${({ theme }) => theme.first};
+  border: 2px solid ${({ theme }) => theme.second};
   border-radius: 8px;
   font-size: 28px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
   padding: 20px 25px;
   margin-top: 25px;
   cursor: pointer;

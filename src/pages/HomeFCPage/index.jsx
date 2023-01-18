@@ -1,13 +1,11 @@
 import CalculatorFC from "@components/CalculatorFC";
-import Header from "@components/Header";
-import ErrorBoundary from "@components/ErrorBoundary";
+import Layout from "@components/Layout";
 
 function HomeFCPage() {
   return (
-    <ErrorBoundary>
-      <Header />
+    <Layout>
       <CalculatorFC />
-    </ErrorBoundary>
+    </Layout>
   );
 }
 

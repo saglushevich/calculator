@@ -1,13 +1,11 @@
-import Header from "@components/Header";
 import Settings from "@components/Settings";
-import ErrorBoundary from "@components/ErrorBoundary";
+import Layout from "@components/Layout";
 
 function SettingsPage() {
   return (
-    <ErrorBoundary>
-      <Header />
+    <Layout>
       <Settings />
-    </ErrorBoundary>
+    </Layout>
   );
 }
 
