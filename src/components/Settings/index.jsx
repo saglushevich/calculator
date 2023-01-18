@@ -7,6 +7,7 @@ import {
   setTheme,
   setInputValue,
 } from "@store/actions/actions";
+import { THEMES } from "@constants";
 
 import {
   SettingsContainer,
@@ -25,7 +26,6 @@ function Settings() {
 
   const clearHistory = () => {
     dispatch(updateHistory([]));
-    localStorage.removeItem("history");
   };
 
   const clearAll = () => {
@@ -39,7 +39,6 @@ function Settings() {
 
   const toggleTheme = (value) => () => {
     dispatch(setTheme(value));
-    localStorage.setItem("theme", value);
   };
 
   return (

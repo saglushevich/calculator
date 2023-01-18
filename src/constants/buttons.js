@@ -1,4 +1,5 @@
-const KEYPAD_BUTTONS = [
+/* eslint-disable import/prefer-default-export */
+export const KEYPAD_BUTTONS = [
   {
     id: "changeSign",
     value: "±",

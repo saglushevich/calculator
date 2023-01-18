@@ -3,12 +3,12 @@ import styled from "styled-components";
 const Button = styled.button`
   width: 80px;
   height: 80px;
-  background-color: ${({ theme }) => theme.colors.first};
-  border: 1px solid ${({ theme }) => theme.colors.second};
+  background-color: ${({ theme }) => theme.first};
+  border: 1px solid ${({ theme }) => theme.second};
   border-radius: 20px;
   cursor: pointer;
   font-size: 32px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
   opacity: 0.8;
   &:nth-child(12) {
     grid-column-start: 1;
@@ -29,9 +29,9 @@ const Button = styled.button`
     right: 77px;
     width: 120px;
     height: 80px;
-    background-color: ${({ theme }) => theme.colors.first};
-    border: 1px solid ${({ theme }) => theme.colors.second};
-    border-right: 2px solid ${({ theme }) => theme.colors.first};
+    background-color: ${({ theme }) => theme.first};
+    border: 1px solid ${({ theme }) => theme.second};
+    border-right: 2px solid ${({ theme }) => theme.first};
     border-radius: 20px 0 0 20px;
   }
 `;

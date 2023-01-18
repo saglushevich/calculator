@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const DisplayContainer = styled.div`
   padding: 10px 25px;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.second};
+  border-bottom: 2px solid ${({ theme }) => theme.second};
 `;
 
 export const InputValue = styled.div`
   font-size: 44px;
-  color: ${({ theme }) => theme.colors.fourth};
+  color: ${({ theme }) => theme.fourth};
   text-align: right;
 `;
 
@@ -17,6 +17,6 @@ export const Expression = styled(InputValue)`
 
 export const ErrorMessage = styled.div`
   font-size: 22px;
-  color: ${({ theme }) => theme.colors.sixth};
+  color: ${({ theme }) => theme.sixth};
   text-align: right;
 `;
