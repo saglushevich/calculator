@@ -3,4 +3,5 @@ export const ROUTES = {
   functionCalc: "/",
   classCalc: "/classes",
   settings: "/settings",
+  base: "/calculator",
 };
