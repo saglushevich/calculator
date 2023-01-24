@@ -7,7 +7,7 @@ const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.second};
   border-radius: 20px;
   cursor: pointer;
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.xxl + "px"};
   color: ${({ theme }) => theme.fourth};
   opacity: 0.8;
   &:nth-child(12) {

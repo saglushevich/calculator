@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HistoryContainer = styled.div`
-  padding: 15px 40px 0;
+  padding: ${({ theme }) => `${theme.xm}px ${theme.xxxl}px 0`};
   width: 400px;
   height: 400px;
   border-left: 2px solid ${({ theme }) => theme.second};
@@ -9,7 +9,7 @@ export const HistoryContainer = styled.div`
 
 export const HistoryTitle = styled.div`
   text-align: center;
-  font-size: 28px;
+  font-size: ${({ theme }) => theme.xxl + "px"};
   color: ${({ theme }) => theme.fourth};
 `;
 
@@ -17,5 +17,5 @@ export const HistoryItems = styled.ul`
   height: 80%;
   overflow: hidden;
   overflow-y: scroll;
-  margin-top: 30px;
+  margin-top: ${({ theme }) => theme.xxl + "px"};
 `;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const SettingsContainer = styled.div`
-  padding: 60px 80px;
+  padding: ${({ theme }) => `${theme.xxxl + theme.xm}px ${theme.xxxl * 2}px`};
 `;
 
 export const SettingsTitle = styled.div`
   text-align: left;
-  font-size: 64px;
+  font-size: ${({ theme }) => `${theme.xl + theme.xxxl}px`};
   color: ${({ theme }) => theme.fourth};
 `;
 
@@ -27,34 +27,34 @@ export const SettingsDropdawn = styled.div`
     display: block;
   }
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: ${({ theme }) => theme.xxxl + "px"};
 `;
 
 export const SettingsSelected = styled.div`
   width: 300px;
   background-color: transparent;
   border: 2px solid ${({ theme }) => theme.second};
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.xs + "px"};
   color: ${({ theme }) => theme.fourth};
-  padding: 20px 25px;
-  font-size: 26px;
-  margin-top: 5px;
+  padding: ${({ theme }) => theme.xl + "px"};
+  font-size: ${({ theme }) => theme.xl + "px"};
+  margin-top: ${({ theme }) => theme.xxs + "px"};
 `;
 
 export const SettingsItem = styled.div`
   display: block;
   border: 2px solid ${({ theme }) => theme.second};
   width: 300px;
-  font-size: 28px;
-  padding: 7px 25px;
+  font-size: ${({ theme }) => theme.xl + "px"};
+  padding: ${({ theme }) => `${theme.xs}px ${theme.xl}px`};
   color: ${({ theme }) => theme.fourth};
   &:nth-last-child(1) {
-    border-radius: 0px 0px 8px 8px;
+    border-radius: ${({ theme }) => `0 0 ${theme.xs}px ${theme.xs}px`};
   }
 `;
 
 export const SettingsSubtitle = styled.div`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.xl + "px"};
   color: ${({ theme }) => theme.fourth};
 `;
 
@@ -64,10 +64,10 @@ export const SettingsButton = styled.button`
   display: block;
   background-color: ${({ theme }) => theme.first};
   border: 2px solid ${({ theme }) => theme.second};
-  border-radius: 8px;
-  font-size: 28px;
+  border-radius: ${({ theme }) => `${theme.xs}px`};
+  font-size: ${({ theme }) => `${theme.xl}px`};
   color: ${({ theme }) => theme.fourth};
-  padding: 20px 25px;
-  margin-top: 25px;
+  padding: ${({ theme }) => `${theme.xm}px ${theme.xl}px`};
+  margin-top: ${({ theme }) => theme.xl + "px"};
   cursor: pointer;
 `;

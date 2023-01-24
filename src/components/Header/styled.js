@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: ${({ theme }) => theme.xl + "px"};
   background-color: ${({ theme }) => theme.third};
 `;
 
 export const Logo = styled.div`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.xl + "px"};
   color: ${({ theme }) => theme.fifth};
 `;
 
@@ -19,10 +19,10 @@ export const Navigation = styled.nav`
 
 export const NavigationItem = styled(NavLink)`
   position: relative;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.xl + "px"};
   color: ${({ theme }) => theme.fifth};
   opacity: 0.7;
-  margin-left: 30px;
+  margin-left: ${({ theme }) => theme.xxl + "px"};
   cursor: pointer;
   &.active {
     opacity: 1;

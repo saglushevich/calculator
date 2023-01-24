@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const ControlPanelContainer = styled.div`
-  padding: 35px 50px;
+  padding: ${({ theme }) => `${theme.xxl}px ${theme.xxxl}px`};
   display: flex;
   justify-content: center;
 `;
 
 export const ControlPanelButton = styled.button`
   display: block;
-  width: 200px;
-  height: 55px;
+  width: 180px;
+  height: 50px;
   background-color: ${({ theme }) => theme.third};
   border: 2px solid ${({ theme }) => theme.second};
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.xs + "px"};
   cursor: pointer;
   color: ${({ theme }) => theme.fifth};
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.xm + "px"};
 `;
