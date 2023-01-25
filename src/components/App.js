@@ -11,13 +11,15 @@ import { ROUTES, THEMES } from "@constants";
 function App() {
   const theme = useSelector((state) => state.theme);
 
+  const themeOptions = {
+    colors: theme === THEMES.dark ? THEMES.darkColors : THEMES.lightColors,
+    gaps: THEMES.gaps,
+    fontSizes: THEMES.fontSizes,
+    borderSizes: THEMES.borderSizes,
+  };
+
   return (
-    <ThemeProvider
-      theme={{
-        ...(theme === THEMES.dark ? THEMES.darkColors : THEMES.lightColors),
-        ...THEMES.sizes,
-      }}
-    >
+    <ThemeProvider theme={themeOptions}>
       <Router>
         <Routes>
           <Route path={ROUTES.functionCalc} element={<HomeFCPage />} />

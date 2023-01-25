@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: ${({ theme }) => theme.xl + "px"};
-  background-color: ${({ theme }) => theme.third};
+  padding: ${({ theme }) => theme.gaps.l};
+  background-color: ${({ theme }) => theme.colors.third};
 `;
 
 export const Logo = styled.div`
-  font-size: ${({ theme }) => theme.xl + "px"};
-  color: ${({ theme }) => theme.fifth};
+  font-size: ${({ theme }) => theme.fontSizes.l};
+  color: ${({ theme }) => theme.colors.fifth};
 `;
 
 export const Navigation = styled.nav`
@@ -19,10 +19,10 @@ export const Navigation = styled.nav`
 
 export const NavigationItem = styled(NavLink)`
   position: relative;
-  font-size: ${({ theme }) => theme.xl + "px"};
-  color: ${({ theme }) => theme.fifth};
+  font-size: ${({ theme }) => theme.fontSizes.l};
+  color: ${({ theme }) => theme.colors.fifth};
   opacity: 0.7;
-  margin-left: ${({ theme }) => theme.xxl + "px"};
+  margin-left: ${({ theme }) => theme.gaps.xl};
   cursor: pointer;
   &.active {
     opacity: 1;
@@ -30,10 +30,10 @@ export const NavigationItem = styled(NavLink)`
   &.active:after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: ${({ theme }) => `-${theme.gaps.s}`};
     left: 0;
     width: 100%;
     height: 2px;
-    background: ${({ theme }) => theme.fifth};
+    background: ${({ theme }) => theme.colors.fifth};
   }
 `;
