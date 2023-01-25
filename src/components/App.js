@@ -13,7 +13,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === THEMES.dark ? DARK_COLORS : LIGHT_COLORS}>
-      <Router>
+      <Router basename={ROUTES.base}>
         <Routes>
           <Route path={ROUTES.functionCalc} element={<HomeFCPage />} />
           <Route path={ROUTES.classCalc} element={<HomeCCPage />} />
