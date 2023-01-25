@@ -20,7 +20,7 @@ function App() {
 
   return (
     <ThemeProvider theme={themeOptions}>
-      <Router>
+      <Router basename={ROUTES.base}>
         <Routes>
           <Route path={ROUTES.functionCalc} element={<HomeFCPage />} />
           <Route path={ROUTES.classCalc} element={<HomeCCPage />} />
