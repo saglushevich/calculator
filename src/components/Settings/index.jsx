@@ -7,6 +7,7 @@ import {
   setTheme,
   setInputValue,
 } from "@store/actions/actions";
+import { THEMES } from "@constants";
 
 import {
   SettingsContainer,
