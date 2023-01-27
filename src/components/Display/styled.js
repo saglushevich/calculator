@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
 export const DisplayContainer = styled.div`
-  padding: 10px 25px;
-  border-bottom: 2px solid ${({ theme }) => theme.second};
+  padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps.l}`};
+  border-bottom: ${({ theme }) =>
+    `${theme.borderSizes.xs} solid ${theme.colors.second}`};
 `;
 
 export const InputValue = styled.div`
-  font-size: 44px;
-  color: ${({ theme }) => theme.fourth};
+  font-size: ${({ theme }) => theme.fontSizes["3xl"]};
+  color: ${({ theme }) => theme.colors.fourth};
   text-align: right;
 `;
 
 export const Expression = styled(InputValue)`
-  font-size: 26px;
+  font-size: ${({ theme }) => theme.fontSizes.xl};
 `;
 
 export const ErrorMessage = styled.div`
-  font-size: 22px;
-  color: ${({ theme }) => theme.sixth};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  color: ${({ theme }) => theme.colors.sixth};
   text-align: right;
 `;
