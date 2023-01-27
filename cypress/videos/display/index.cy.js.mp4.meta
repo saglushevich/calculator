@@ -1,0 +1,31 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-1616
+END=3032
+title=display tests (FC) output 6*2=12
+[CHAPTER]
+TIMEBASE=1/1000
+START=3352
+END=7701
+title=display tests (FC) output 6*2+18/9%5-4=10
+[CHAPTER]
+TIMEBASE=1/1000
+START=7715
+END=12058
+title=display tests (FC) Invalid input format
+[CHAPTER]
+TIMEBASE=1/1000
+START=12057
+END=16411
+title=display tests (CC) output 6*2=12
+[CHAPTER]
+TIMEBASE=1/1000
+START=16427
+END=20771
+title=display tests (CC) output 6*2+18/9%5-4=10
+[CHAPTER]
+TIMEBASE=1/1000
+START=20756
+END=25121
+title=display tests (CC) Invalid input format
