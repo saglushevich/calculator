@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import KeypadButton from "@components/KeypadButton/index";
 import { KEYPAD_BUTTONS, KEYPAD_ACTIONS } from "@constants";
 import {
-  updateExpression,
   setInvalidInputFormat,
   setInputValue,
-  updateHistory,
+  inputPoint,
+  inputNumber,
+  inputOperator,
+  clearCalculations,
+  setResult,
 } from "@store/actions/actions";
 import { createCalcQueue, calculate } from "@utils/calculator";
 
@@ -17,59 +20,16 @@ function Keypad() {
 
   const expression = useSelector((state) => state.expression);
   const input = useSelector((state) => state.inputValue);
-  const history = useSelector((state) => state.history);
-
-  const onInputNumber = (value) => {
-    if (input === "0") {
-      dispatch(setInputValue(value));
-    } else if (isNaN(input)) {
-      dispatch(setInputValue(value));
-      dispatch(updateExpression(expression.concat(input)));
-    } else {
-      dispatch(setInputValue(input.concat(value)));
-    }
-  };
-
-  const onInputPoint = (value) => {
-    if (isNaN(input)) {
-      dispatch(setInputValue(`0${value}`));
-      dispatch(updateExpression(expression.concat(input)));
-    } else if (!input.includes(value)) {
-      dispatch(setInputValue(input.concat(value)));
-    }
-  };
-
-  const onInputOperator = (value) => {
-    if (
-      input === "+" ||
-      input === "-" ||
-      input === "*" ||
-      input === "%" ||
-      input === "/"
-    ) {
-      dispatch(setInputValue(value));
-    } else if (input !== "(") {
-      dispatch(setInputValue(value));
-      dispatch(updateExpression(expression.concat(input)));
-    }
-  };
 
   const onSelectElement = (value) => () => {
     dispatch(setInvalidInputFormat(false));
 
     if (value.match(/\d/)) {
-      onInputNumber(value);
-    } else if (value.match(/[+\-*/%]/)) {
-      onInputOperator(value);
-    } else if (value === "(" || value === ")") {
-      if (input === "0") {
-        dispatch(setInputValue(value));
-      } else {
-        dispatch(setInputValue(value));
-        dispatch(updateExpression(expression.concat(input)));
-      }
+      dispatch(inputNumber(value));
+    } else if (value.match(/[+\-*/%()]/)) {
+      dispatch(inputOperator(value));
     } else {
-      onInputPoint(value);
+      dispatch(inputPoint(value));
     }
   };
 
@@ -80,31 +40,17 @@ function Keypad() {
   };
 
   const onClearExpression = () => {
-    dispatch(updateExpression([]));
-    dispatch(setInputValue("0"));
-    dispatch(setInvalidInputFormat(false));
+    dispatch(clearCalculations());
   };
 
   const onEqual = () => {
     const finalFormula = expression.concat(input);
     let result = calculate(createCalcQueue(finalFormula));
+
     if (!Number.isNaN(result) && finalFormula.length !== 1) {
       result = result % 1 !== 0 ? result.toFixed(3) : result;
 
-      const newHistoryList = [
-        ...history,
-        { expression: [...expression, input].join(""), result },
-      ];
-
-      dispatch(updateHistory(newHistoryList));
-      dispatch(updateExpression(result + ""));
-
-      localStorage.setItem("history", JSON.stringify(newHistoryList));
-
-      dispatch(setInputValue(result + ""));
-      dispatch(updateExpression([]));
-      sessionStorage.removeItem("expression");
-      sessionStorage.removeItem("inputValue");
+      dispatch(setResult(result.toString()));
     } else {
       dispatch(setInvalidInputFormat(true));
     }
