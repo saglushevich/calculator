@@ -2,7 +2,7 @@
 
 describe("keyboard functional components", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000/calculator");
   });
 
   it("input numbers/operands 61-7+8*2/9=55.778", () => {
@@ -171,7 +171,7 @@ describe("keyboard functional components", () => {
 
 describe("keyboard class components", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/classes");
+    cy.visit("http://localhost:3000/calculator/classes");
   });
 
   it("input numbers/operands 61-7+8*2/9=55.778", () => {

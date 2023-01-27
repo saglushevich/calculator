@@ -2,7 +2,7 @@
 
 describe("display tests (FC)", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000/calculator");
   });
 
   it("output 6*2=12", () => {
@@ -93,7 +93,7 @@ describe("display tests (FC)", () => {
 
 describe("display tests (CC)", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/classes");
+    cy.visit("http://localhost:3000/calculator/classes");
   });
 
   it("output 6*2=12", () => {
